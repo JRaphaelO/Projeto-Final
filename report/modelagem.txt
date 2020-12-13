@@ -1,0 +1,29 @@
+n: número de produtos fabricados.
+m: número de matérias primas utilizadas.
+B: número de horas mensais.
+T: número da quantidade de horas necessárias para a troca de produto.
+F: Custo fixo mensal.
+Ri: valor da venda de um produto.
+Cj: preço de um lote.
+Lj: quantidade do lote com matérias primas.
+aij: quantidade de matéria prima utilizada.
+bi: quantidade horas para o produto ser produzido.
+
+pi: quantidade de produtos fabricados.
+xj: quantidade de lotes comprados.
+zi: representa se o produto foi ou não fabricado.
+
+lucro = sum(pi * Ri) - (F + sum(xj * Cj)), Maximize
+
+sum(pi * bi) + sum(zi) * T <= B, para todo i = 1, ..., n.
+
+pi >= DMINi * zi, para todo i = 1, ..., n.
+pi <= DMAXi * zi, para todo i = 1, ..., n.
+
+sum(pi * aij) <= xj * Lj, para todo i = 1, ..., n; j = 1, ..., m.
+
+pi >= 0, para todo i = 1, ..., n.
+xj >= 1, para todo j = 1, ..., m.
+0 <= zi <= 1, para todo i = 1, ..., n.
+
+z integer.
